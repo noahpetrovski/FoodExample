@@ -1,14 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Title</title>
-    <link rel="stylesheet" href="screen.css">
-  </head>
-  <body>
-    <h1>Heading</h1>
-    <script src="index.js"></script>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ember & Crust – Wood‑Fired Pizza & Taproom</title>
+  <meta name="description" content="Neighborhood wood‑fired pizza & taproom. Reserve a table, order online, or call us." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+  <!-- Skip link -->
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Top utility bar -->
+  <div class="util-bar">
+    <span id="openBadge" class="badge">Checking hours…</span>
+    <span class="util-location">143 W Second St, Rochester, MI</span>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="logo" href="#top">Ember &amp; Crust</a>
+      <nav class="site-nav" aria-label="Main">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="primary-menu" id="navToggle">Menu</button>
+        <ul id="primary-menu">
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#specials">Specials</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#location">Location</a></li>
+        </ul>
+      </nav>
+      <div class="header-ctas">
+        <a class="btn btn-wheat" href="reserve.html">Reserve</a>
+        <a class="btn btn-brick" href="#" aria-label="Order online (demo)">Order</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Featured dishes and vibe">
+    <div class="hero-slide current" style="--bg:url('assets/img/hero-1.jpg')">
+      <div class="hero-content container">
+        <h1>Wood‑Fired Pizza. Local Taps. Good People.</h1>
+        <p>Stone‑baked pies, seasonal salads, and Michigan beers on draft.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-brick" href="reserve.html">Reserve a Table</a>
+          <a class="btn btn-ghost" href="#menu">View Menu</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-slide" style="--bg:url('assets/img/hero-2.jpg')">
+      <div class="hero-content container">
+        <h2>Happy Hour • Mon–Thu 3–6</h2>
+        <p>$2 off drafts • $8 Margherita slices • Half‑price wings</p>
+      </div>
+    </div>
+    <button class="hero-nav prev" aria-label="Previous slide">‹</button>
+    <button class="hero-nav next" aria-label="Next slide">›</button>
+  </section>
+
+  <main id="main">
+    <!-- Quick actions (mobile sticky duplicates at bottom) -->
+    <section class="quick-actions container" aria-label="Quick actions">
+      <a class="qa" href="reserve.html">Reserve</a>
+      <a class="qa" href="#" onclick="window.location.href='tel:+12485551234'">Call</a>
+      <a class="qa" href="#">Order</a>
+    </section>
+
+    <!-- Specials / Today -->
+    <section id="specials" class="specials">
+      <div class="container">
+        <div class="specials-head">
+          <h3>Today at Ember &amp; Crust</h3>
+          <span id="todayFlag" class="flag">Today’s Special</span>
+        </div>
+        <div class="specials-grid">
+          <article class="card">
+            <h4 id="dailySpecialTitle">Truffle Honey Margherita</h4>
+            <p id="dailySpecialDesc">Fresh mozzarella, basil, truffle honey drizzle, sea salt.</p>
+            <span class="price">$16</span>
+          </article>
+          <article class="card">
+            <h4>Tap Feature</h4>
+            <p>Rochester Mills Pine Knob Pils • 16oz</p>
+            <span class="price">$7</span>
+          </article>
+          <article class="card">
+            <h4>Event</h4>
+            <p>Trivia Night · Thursdays @ 7:30 PM</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Menu preview -->
+    <section id="menu" class="menu-preview">
+      <div class="container">
+        <div class="section-head">
+          <h3>Popular Picks</h3>
+          <a class="link-arrow" href="menu.html">View Full Menu →</a>
+        </div>
+        <div class="menu-grid">
+          <article class="item">
+            <h4>Margherita <span class="chip">V</span></h4>
+            <p>San Marzano, fresh mozzarella, basil, olive oil.</p>
+            <span class="price">$14</span>
+          </article>
+          <article class="item">
+            <h4>Hot Honey Pepperoni <span class="chip">🌶</span></h4>
+            <p>Cup‑and‑char pepperoni, ricotta, chili honey.</p>
+            <span class="price">$17</span>
+          </article>
+          <article class="item">
+            <h4>Wild Mushroom</h4>
+            <p>Cremini, oyster, fontina, thyme, garlic butter.</p>
+            <span class="price">$18</span>
+          </article>
+          <article class="item">
+            <h4>Chopped Italian Salad <span class="chip">GF</span></h4>
+            <p>Romaine, chickpeas, salami, pepperoncini, oregano vinaigrette.</p>
+            <span class="price">$12</span>
+          </article>
+          <article class="item">
+            <h4>Wings (8)</h4>
+            <p>Wood‑roasted, lemon‑garlic or Calabrian chili.</p>
+            <span class="price">$13</span>
+          </article>
+          <article class="item">
+            <h4>Tiramisu</h4>
+            <p>Espresso‑soaked ladyfingers, mascarpone, cocoa.</p>
+            <span class="price">$8</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Photo strip -->
+    <section class="gallery" aria-label="Photo gallery">
+      <div class="container gallery-strip">
+        <img src="assets/img/gallery-1.jpg" alt="Wood‑fired oven with flames" />
+        <img src="assets/img/gallery-2.jpg" alt="Close‑up of pizza crust and basil" />
+        <img src="assets/img/gallery-3.jpg" alt="Tap handles at the bar" />
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" class="reviews">
+      <div class="container">
+        <h3>What Locals Say</h3>
+        <div class="review-carousel" aria-live="polite">
+          <blockquote class="rev current">
+            “Best crust in town. The char is perfect and the vibe is cozy.” <cite>— Jordan M.</cite>
+          </blockquote>
+          <blockquote class="rev">
+            “Happy hour is a cheat code. Great pours, cheap slices.” <cite>— Alina R.</cite>
+          </blockquote>
+          <blockquote class="rev">
+            “Service is fast even on busy nights. Get the mushroom pie.” <cite>— Dev P.</cite>
+          </blockquote>
+        </div>
+        <div class="dots" role="tablist" aria-label="Select review">
+          <button class="dot active" aria-label="Review 1"></button>
+          <button class="dot" aria-label="Review 2"></button>
+          <button class="dot" aria-label="Review 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location -->
+    <section id="location" class="location">
+      <div class="container loc-wrap">
+        <div class="loc-copy">
+          <h3>Hours &amp; Location</h3>
+          <p><strong>143 W Second St</strong><br>Rochester, MI 48307</p>
+          <p><strong>Hours</strong><br>Mon–Thu 11–10 · Fri–Sat 11–11 · Sun 11–9</p>
+          <div class="loc-actions">
+            <a class="btn btn-wheat" href="https://www.google.com/maps/search/?api=1&query=143%20W%20Second%20St%20Rochester%20MI" target="_blank" rel="noopener">Open in Maps</a>
+            <a class="btn btn-ghost" href="tel:+12485551234">Call (248) 555‑1234</a>
+          </div>
+        </div>
+        <div class="loc-map">
+          <!-- Simple map embed (static) -->
+          <iframe
+            title="Google Map"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://maps.google.com/maps?q=143%20W%20Second%20St%20Rochester%20MI&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>Ember &amp; Crust</h4>
+        <p>Neighborhood wood‑fired pizza &amp; taproom.</p>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <p>(248) 555‑1234<br>hello@emberandcrust.demo</p>
+      </div>
+      <div>
+        <h5>Visit</h5>
+        <p>143 W Second St, Rochester, MI</p>
+      </div>
+    </div>
+    <p class="legal">© <span id="year"></span> Ember &amp; Crust. All rights reserved.</p>
+
+    <!-- Mobile sticky action bar -->
+    <div class="mobile-sticky">
+      <a href="reserve.html">Reserve</a>
+      <a href="tel:+12485551234">Call</a>
+      <a href="#">Order</a>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/main.js" defer></script>
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Restaurant",
+    "name":"Ember & Crust",
+    "address":{"@type":"PostalAddress","streetAddress":"143 W Second St","addressLocality":"Rochester","addressRegion":"MI","postalCode":"48307"},
+    "telephone":"+1-248-555-1234",
+    "servesCuisine":"Pizza",
+    "openingHoursSpecification":[
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Monday","Tuesday","Wednesday","Thursday"],"opens":"11:00","closes":"22:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Friday","Saturday"],"opens":"11:00","closes":"23:00"},
+      {"@type":"OpeningHoursSpecification","dayOfWeek":"Sunday","opens":"11:00","closes":"21:00"}
+    ],
+    "priceRange":"$$"
+  }
+  </script>
+</body>
 </html>
