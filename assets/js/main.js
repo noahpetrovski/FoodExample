@@ -2,6 +2,21 @@
 const $ = (s, root=document) => root.querySelector(s);
 const $$ = (s, root=document) => [...root.querySelectorAll(s)];
 
+/* ========== Apply hero backgrounds from data-bg (Safari-safe) ========== */
+(() => {
+  document.querySelectorAll('.hero-slide').forEach(el => {
+    const src = el.getAttribute('data-bg');
+    if (src) {
+      el.style.backgroundImage =
+        `linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,.5)), url("${src}")`;
+      el.style.backgroundPosition = 'center';
+      el.style.backgroundSize = 'cover';
+      el.style.backgroundRepeat = 'no-repeat';
+    }
+  });
+})();
+
+
 /* ========== Year in footer ========== */
 (() => { const y = new Date().getFullYear(); const el = $('#year'); if (el) el.textContent = y; })();
 
